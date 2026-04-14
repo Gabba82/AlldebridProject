@@ -1,0 +1,27 @@
+services:
+  cli:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: alldebrid-emby:latest
+    env_file:
+      - .env
+    volumes:
+      - ${ROOT_PATH:-/mnt/16G/alldebrid-emby}:${ROOT_PATH:-/mnt/16G/alldebrid-emby}
+      - ./:/app
+    working_dir: /app
+    entrypoint: ["python", "-m", "app.cli"]
+
+  worker:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: alldebrid-emby:latest
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ${ROOT_PATH:-/mnt/16G/alldebrid-emby}:${ROOT_PATH:-/mnt/16G/alldebrid-emby}
+      - ./:/app
+    working_dir: /app
+    command: ["python", "-m", "app.cli", "worker"]
