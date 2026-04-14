@@ -1,0 +1,1 @@
+"""AllDebrid to Emby bridge."""
