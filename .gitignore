@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.coverage
+.env
+config/config.yaml
+data/state/*.sqlite3
+data/state/*.json
+data/state/*.csv
+data/logs/*.log
+data/inbox/*.processed
+_runtime/
