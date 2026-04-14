@@ -1,0 +1,33 @@
+root_path: /mnt/16G/alldebrid-emby
+library_movies_path: /mnt/16G/alldebrid-emby/library/Peliculas
+library_series_path: /mnt/16G/alldebrid-emby/library/Series
+log_level: INFO
+request_timeout: 20
+retry_count: 3
+retry_delay: 2
+dry_run: false
+use_docker: false
+polling_interval_seconds: 60
+max_wait_for_magnet_seconds: 7200
+worker_refresh_interval_cycles: 10
+validate_links_timeout: 15
+video_extensions:
+  - .mkv
+  - .mp4
+  - .avi
+  - .mov
+  - .wmv
+  - .ts
+file_patterns_to_ignore:
+  - sample
+  - trailer
+  - .nfo
+  - .txt
+  - .jpg
+  - .jpeg
+  - .png
+  - .gif
+  - .srt
+  - .sub
+  - .ass
+  - .ssa
